@@ -88,7 +88,7 @@
                 <div class="bg-gray-100 px-10 py-10 rounded-2xl text-3xl font-space-mono shadow-lg mb-10">
                     <h2>Je suis une fan de manga</h2>
                     <h2 class="mb-10">J'en lis plusieurs!</h2>
-
+                    <!--Code genre-->
                     <h2>Vous pouriez trouver votre genre :</h2>
                     <div class="flex align-content mt-10 space-x-5">
                         <p class="code-suse-mono text-sm bg-accent-200 p-2 rounded">Romance</p>
@@ -181,7 +181,55 @@
             </div>
         
         </div>
+
+        <!-- Section cartes manga pleine largeur pour iPad -->
+        <div class="manga-cards-full">
+            <div class="w-48 h-80 relative overflow-hidden group rounded-xl shadow-xl p-6 bg-gray-100 cursor-pointer
+            transition-transform duration-300 hover:rotate-3 hover:scale-105">
+
+                <img src="assets/uploads/sawako.png" class="w-20 h-20 object-cover rounded-lg mb-4">
+
+                <!-- Overlay pour l'effet "révélation circulaire" -->
+                <div class="absolute bg-white inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl justify-center">
+                    <img src="assets/uploads/sawako.png" class="w-full h-full object-cover rounded-lg mb-4">
+                </div>
+
+                <h1 class="text-xl font-bold text-primary-700">Shojo</h1>
+                <p class="text-sm text-secondary-600 mt-2">Romance & Émotion</p>
+            </div>
+
+            <div class="w-48 h-80 relative overflow-hidden group rounded-xl shadow-xl p-6 bg-gray-100 cursor-pointer
+            transition-transform duration-300 hover:rotate-3 hover:scale-105">
+
+                <img src="assets/uploads/tomie.png" class="w-20 h-20 object-cover rounded-lg mb-4">
+
+                <!-- Overlay pour l'effet "révélation circulaire" -->
+                <div class="absolute bg-white inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl justify-center">
+                    <img src="assets/uploads/tomie.png" class="w-full h-full object-cover rounded-lg mb-4">
+                </div>
+
+                <h1 class="text-xl font-bold text-primary-700">Shonen</h1>
+                <p class="text-sm text-secondary-600 mt-2">Action & Aventure</p>
+            </div>
+
+            <div class="w-48 h-80 relative overflow-hidden group rounded-xl shadow-xl p-6 bg-gray-100 cursor-pointer
+            transition-transform duration-300 hover:rotate-3 hover:scale-105">
+
+                <img src="assets/uploads/ostu.png" class="w-20 h-20 object-cover rounded-lg mb-4">
+
+                <!-- Overlay pour l'effet "révélation circulaire" -->
+                <div class="absolute bg-white inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl justify-center">
+                    <img src="assets/uploads/ostu.png" class="w-full h-full object-cover rounded-lg mb-4">
+                </div>
+
+                <h1 class="text-xl font-bold text-primary-700">Seinen</h1>
+                <p class="text-sm text-secondary-600 mt-2">Histoires matures</p>
+            </div>
+        </div>
     
+
+        <!--Button-->
+        
     </main>
     
     <script src="script.js"></script>
