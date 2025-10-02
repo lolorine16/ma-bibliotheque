@@ -1,0 +1,246 @@
+/* Styles personnalisés pour ma-bibliotheque */
+
+/* Déclaration des fonts personnalisées */
+@font-face {
+  font-family: 'Space Mono';
+  src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('./assets/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('./assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('./assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSE_Mono/SUSEMono-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Variables personnalisées */
+:root {
+  --primary-color: #66666E;
+  --secondary-color: #9999A1;
+  --accent-color: #E6E6E9;
+  --font-space-mono: 'Space Mono', monospace;
+  --font-suse-mono: 'SUSE Mono', monospace;
+}
+
+
+
+/* Classes pour utiliser les fonts personnalisées */
+.font-space-mono {
+  font-family: var(--font-space-mono) !important;
+  letter-spacing: -0.025em;
+}
+
+.font-suse-mono {
+  font-family: var(--font-suse-mono) !important;
+  letter-spacing: 0.025em;
+}
+
+/* Utilitaires Tailwind personnalisés */
+@layer utilities {
+  .text-primary {
+    color: var(--primary-color);
+  }
+  
+  .text-secondary {
+    color: var(--secondary-color);
+  }
+  
+  .text-accent {
+    color: var(--accent-color);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary-color);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary-color);
+  }
+  
+  .bg-accent {
+    background-color: var(--accent-color);
+  }
+}
+
+/* Effet de révélation circulaire si vous le souhaitez */
+@layer components {
+  .clip-circle {
+    clip-path: circle(20% at 50% 50%);
+  }
+  
+  .clip-circle-full {
+    clip-path: circle(150% at 50% 50%);
+  }
+  
+  .manga-card-reveal {
+    clip-path: circle(0% at center);
+    transition: clip-path 0.6s ease-in-out;
+  }
+  
+  .group:hover .manga-card-reveal {
+    clip-path: circle(150% at center);
+  }
+}
+
+/* Animations pour l'image SVG au chargement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawSVG {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Classes pour l'animation SVG */
+.svg-draw-animation {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+
+/* Animations pour les éléments SVG */
+.svg-stroke-element {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  opacity: 0;
+}
+
+.svg-stroke-element.animate {
+  animation: drawSVGContinuous 3s ease-in-out infinite;
+}
+
+.svg-element {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.svg-element.animate {
+  animation: fadeInScaleContinuous 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawSVG {
+  from {
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Animations continues */
+@keyframes drawSVGContinuous {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.7;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -1000;
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInScaleContinuous {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+/* Animation de pulsation pour le container */
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+.svg-draw-animation.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+
+
+
+

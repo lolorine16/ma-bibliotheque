@@ -4,8 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliotheque</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'space-mono': ['Space Mono', 'monospace'],
+                        'suse-mono': ['SUSE Mono', 'monospace'],
+                        'sans': ['SUSE Mono', 'ui-sans-serif', 'system-ui'],
+                        'mono': ['Space Mono', 'ui-monospace', 'SFMono-Regular']
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f8f9fa',
+                            100: '#f1f3f4', 
+                            500: '#66666E',
+                            600: '#5a5a61',
+                            700: '#4e4e54',
+                            900: '#2c2c30'
+                        },
+                        secondary: {
+                            50: '#fafbfc',
+                            100: '#f4f5f6',
+                            500: '#9999A1',
+                            600: '#8a8a91',
+                            700: '#7b7b81',
+                            900: '#4d4d52'
+                        },
+                        accent: {
+                            50: '#fefefe',
+                            100: '#fdfdfd',
+                            200: '#E6E6E9',
+                            300: '#d9d9dc',
+                            500: '#ccccce',
+                            600: '#b8b8bb',
+                            700: '#a5a5a8',
+                            900: '#7f7f82'
+                        }
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                    }
+                },
+                keyframes: {
+                    draw: {
+                    '0%': { strokeDashoffset: '1000' },
+                    '100%': { strokeDashoffset: '0' },
+                    },
+                },
+                animation: {
+                    draw: 'draw 2s linear forwards',
+                },
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+    
 </head>
-<body>
-    <h1>Bibliotheque</h1>
+<body class="bg-gray-50 font-sans">
+
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-white/30">
+        <div class="my-10 text-center">
+            <h1 class="font-space-mono text-4xl font-bold text-primary-700">
+                Ma Bibliothèque
+            </h1>
+        </div>
+    </header>
+
+    <main class="mt-20 p-4">
+
+        <div class="flex justify-between px-20 py-20">
+            <!--text-->
+            <div class="flex-2 pl-10 ml-20">
+                <h1 class="font-space-mono text-5xl mb-10">
+                    Hi! C'est 
+                    <span class="bg-gradient-to-r from-secondary-500 to-primary-500 bg-clip-text text-transparent font-bold">Laureen</span>
+                </h1>
+                <div class="bg-gray-100 px-10 py-10 rounded-2xl text-3xl font-space-mono shadow-lg mb-10">
+                    <h2>Je suis une fan de manga</h2>
+                    <h2 class="mb-10">J'en lis plusieurs!</h2>
+
+                    <h2>Vous pouriez trouver votre genre :</h2>
+                    <div class="flex align-content mt-10 space-x-5">
+                        <p class="code-suse-mono text-sm bg-accent-200 p-2 rounded">Romance</p>
+                        <p class="code-suse-mono text-sm bg-accent-200 p-2 rounded">Aventure</p>
+                        <p class="code-suse-mono text-sm bg-accent-200 p-2 rounded">Psychologie</p>
+                        <p class="code-suse-mono text-sm bg-accent-200 p-2 rounded">Action</p>
+                        <p class="code-suse-mono text-sm bg-accent-200 p-2 rounded">Drame</p>
+                    </div>
+                    
+                </div>
+
+                <!--Type de manga -->
+                <div class="flex items-center align-content space-x-8 font-space-mono">
+
+                    <div class="w-48 h-80 relative overflow-hidden group rounded-xl shadow-xl p-6 bg-gray-100 cursor-pointer
+                    transition-transform duration-300 hover:rotate-3 hover:scale-105">
+
+                        <img src="assets/uploads/sawako.png" class="w-20 h-20 object-cover rounded-lg mb-4">
+  
+                        <!-- Overlay pour l'effet "révélation circulaire" -->
+                        <div class="absolute bg-white inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl justify-center">
+                            <img src="assets/uploads/sawako.png" class="w-full h-full object-cover rounded-lg mb-4">
+                        </div>
+
+                        <h1 class="text-xl font-bold text-primary-700">Shojo</h1>
+                        <p class="text-sm text-secondary-600 mt-2">Romance & Émotion</p>
+                    </div>
+
+                    <div class="w-48 h-80 relative overflow-hidden group rounded-xl shadow-xl p-6 bg-gray-100 cursor-pointer
+                    transition-transform duration-300 hover:rotate-3 hover:scale-105">
+
+                        <img src="assets/uploads/tomie.png" class="w-20 h-20 object-cover rounded-lg mb-4">
+  
+                        <!-- Overlay pour l'effet "révélation circulaire" -->
+                        <div class="absolute bg-white inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl justify-center">
+                            <img src="assets/uploads/tomie.png" class="w-full h-full object-cover rounded-lg mb-4">
+                        </div>
+
+                        <h1 class="text-xl font-bold text-primary-700">Shonen</h1>
+                        <p class="text-sm text-secondary-600 mt-2">Action & Aventure</p>
+                    </div>
+
+                    <div class="w-48 h-80 relative overflow-hidden group rounded-xl shadow-xl p-6 bg-gray-100 cursor-pointer
+                    transition-transform duration-300 hover:rotate-3 hover:scale-105">
+
+                        <img src="assets/uploads/ostu.png" class="w-20 h-20 object-cover rounded-lg mb-4">
+  
+                        <!-- Overlay pour l'effet "révélation circulaire" -->
+                        <div class="absolute bg-white inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl justify-center">
+                            <img src="assets/uploads/ostu.png" class="w-full h-full object-cover rounded-lg mb-4">
+                        </div>
+
+                        <h1 class="text-xl font-bold text-primary-700">Seinen</h1>
+                        <p class="text-sm text-secondary-600 mt-2">Histoires matures</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Image-->
+            <div class="relative ml-10">
+                
+
+                <!-- SVG avec effet de draw/fade -->
+                <svg width="750" height="850" viewBox="0 0 589 800" fill="none" 
+                     class="svg-draw-animation opacity-0 transform translate-y-8 " 
+                     id="heroImage"
+                     xmlns="http://www.w3.org/2000/svg">
+                    
+                    <!-- Rectangles avec animation progressive -->
+                    <rect width="300" height="300" fill="#9999A1" 
+                          class="svg-element" style="animation-delay: 0.2s"/>
+                    <rect x="25" y="115" width="485" height="485" rx="242.5" 
+                          stroke="black" stroke-width="3" fill="transparent"
+                          class="svg-stroke-element" style="animation-delay: 0.4s"/>
+                    <rect x="59" y="162" width="391" height="391" rx="170" fill="#E6E6E9"
+                          class="svg-element" style="animation-delay: 0.6s"/>
+                    <rect x="324" y="79" width="200" height="200" rx="100" fill="#66666E"
+                          class="svg-element" style="animation-delay: 0.8s"/>
+                    <rect y="423" width="100" height="100" rx="50" fill="#66666E"
+                          class="svg-element" style="animation-delay: 1s"/>
+                    <path d="M389 400L562.205 700H215.795L389 400Z" 
+                          stroke="#9999A1" stroke-width="4" fill="transparent"
+                          class="svg-stroke-element" style="animation-delay: 1.2s"/>
+
+                </svg>
+                
+                <img src="assets/uploads/girl01.png" class=" absolute inset-0 object-cover z-10 w-25 h-25 ml-20 mt-20">
+                
+            </div>
+        
+        </div>
+    
+    </main>
+    
+    <script src="script.js"></script>
 </body>
 </html>
