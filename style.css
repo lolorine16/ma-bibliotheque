@@ -265,8 +265,10 @@
   
   /* Main layout */
   main {
-    margin-top: 6rem !important;
-    padding: 0.5rem !important;
+    margin-top: 4rem !important;
+    padding: 0.25rem 0.15rem !important;
+    margin-left: 0.25rem !important;
+    margin-right: 0.15rem !important;
   }
   
   main .flex {
@@ -292,9 +294,9 @@
     margin: 0.25rem !important;
   }
   
-  /* Container texte avec plus de marge horizontale */
+  /* Container texte avec moins de marge horizontale */
   .flex-2 {
-    margin: 0 1rem !important;
+    margin: 0 0.5rem !important;
     padding: 0 !important;
   }
   
@@ -340,8 +342,8 @@
   .space-x-8 {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 1.5rem !important;
-    margin: 1.5rem !important;
+    gap: 1rem !important;
+    margin: 1rem 0.5rem !important;
     justify-items: center !important;
   }
   
@@ -402,6 +404,48 @@
     z-index: 10 !important;
     margin: 0 !important;
   }
+
+  /* Section boutons et liens mobile - Portrait */
+  .flex.justify-between {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0.5rem !important;
+    gap: 1rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .flex.justify-between .ml-20 {
+    margin-left: 0 !important;
+    order: 1 !important;
+  }
+
+  .flex.justify-between .text-4xl {
+    font-size: 1rem !important;
+  }
+
+  .flex.justify-between .size-10 {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  .flex.justify-between button {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  .flex.justify-between .space-x-6 {
+    order: 2 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .flex.justify-between svg[width="50"] {
+    width: 20px !important;
+    height: 20px !important;
+  }
 }
 
 /* Très petit écran mobile (jusqu'à 480px) */
@@ -413,7 +457,7 @@
   
   /* Container texte avec marge réduite mais présente */
   .flex-2 {
-    margin: 0 2rem !important;
+    margin: 0 0.75rem !important;
   }
   
   .flex-2 h1 {
@@ -477,8 +521,8 @@
   }
   
   .space-x-8 {
-    margin: 0.7rem !important;
-    gap: 0.75rem !important;
+    margin: 0.5rem 0.25rem !important;
+    gap: 0.5rem !important;
   }
   
   /* Image girl01.png pour petit écran - toujours en overlay */
@@ -498,6 +542,35 @@
     height: 300px !important;
     margin: 0 auto 0.75rem auto !important;
     position: relative !important;
+  }
+  
+  /* Section boutons et liens mobile */
+  .flex.justify-between {
+    padding: 0.25rem 0.5rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .flex.justify-between .ml-20 {
+    margin-left: 0 !important;
+  }
+
+  .flex.justify-between .text-4xl {
+    font-size: 0.875rem !important;
+  }
+
+  .flex.justify-between .size-10 {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+
+  .flex.justify-between button {
+    font-size: 0.625rem !important;
+    padding: 0.375rem 0.5rem !important;
+  }
+
+  .flex.justify-between svg[width="50"] {
+    width: 18px !important;
+    height: 18px !important;
   }
 }
 
@@ -521,20 +594,22 @@
     font-size: 1.25rem !important;
   }
   
-  /* Main layout horizontal pour paysage */
+  /* Main layout vertical pour paysage avec cartes en bas */
   main {
     margin-top: 3rem !important;
     padding: 0.5rem !important;
     height: calc(100vh - 3rem) !important;
     overflow-y: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   
   main .flex {
     flex-direction: row !important;
     gap: 1rem !important;
-    padding: 1rem !important;
+    padding: 0.5rem !important;
     align-items: flex-start !important;
-    height: 100% !important;
+    flex: none !important;
   }
   
   /* Container texte à gauche */
@@ -544,6 +619,11 @@
     padding: 0 1rem !important;
     margin-left: 0.25rem !important;
     max-width: 50% !important;
+  }
+  
+  /* Masquer les cartes dans le container texte */
+  .flex-2 .space-x-8 {
+    display: none !important;
   }
   
   /* Texte principal compact */
@@ -585,13 +665,14 @@
     border-radius: 0.25rem !important;
   }
   
-  /* Cartes manga - 2 par ligne */
-  .space-x-8 {
+  /* Cartes manga comme section séparée en bas */
+  .space-x-8:not(.flex-2 .space-x-8) {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 0.75rem !important;
-    margin: 2rem 0 !important;
-    width: 100% !important;
+    margin: 1rem 0.5rem 1rem 0.5rem !important;
+    width: auto !important;
+    order: 10 !important;
   }
   
   .w-48.h-80 {
@@ -650,6 +731,40 @@
 
   }
   
+  /* Afficher la section manga-cards-full en mode paysage téléphone */
+  .manga-cards-full {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    margin: 1rem 0.5rem !important;
+    width: 100% !important;
+    padding: 0 !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .manga-cards-full .w-48.h-80 {
+    flex: none !important;
+    width: 8rem !important;
+    height: 12rem !important;
+    padding: 0.75rem !important;
+    margin: 0 !important;
+  }
+  
+  .manga-cards-full .w-48.h-80 img {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  .manga-cards-full .w-48.h-80 h1 {
+    font-size: 0.75rem !important;
+  }
+  
+  .manga-cards-full .w-48.h-80 p {
+    font-size: 0.625rem !important;
+  }
+  
   /* SVG et image à droite */
   .relative.ml-10 {
     flex: 1 !important;
@@ -679,6 +794,35 @@
     z-index: 10 !important;
     margin: 0 !important;
   }
+  
+  /* Section boutons et liens paysage */
+  .flex.justify-between {
+    padding: 0.5rem 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .flex.justify-between .ml-20 {
+    margin-left: 0.5rem !important;
+  }
+  
+  .flex.justify-between .text-4xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .flex.justify-between .size-10 {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  
+  .flex.justify-between button {
+    font-size: 0.875rem !important;
+    padding: 0.375rem !important;
+  }
+  
+  .flex.justify-between svg[width="50"] {
+    width: 25px !important;
+    height: 25px !important;
+  }
 }
 
 /* ==================== RESPONSIVITÉ IPAD ==================== */
@@ -705,6 +849,8 @@
     padding: 1rem !important;
     display: flex !important;
     flex-direction: column !important;
+    height: calc(100vh - 4rem) !important;
+    overflow-y: auto !important;
   }
   
   main .flex {
@@ -908,5 +1054,52 @@
     height: 16rem !important;
     z-index: 10 !important;
     margin: 0 !important;
+  }
+
+  /* Section boutons et liens après les cartes sur iPad */
+  .manga-cards-full + .flex {
+    margin-top: 1rem !important;
+    padding: 1rem 2rem !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Bouton à gauche */
+  .manga-cards-full + .flex .ml-20 {
+    margin-left: 1rem !important;
+    flex: none !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  .manga-cards-full + .flex .text-4xl {
+    font-size: 2rem !important;
+  }
+
+  .manga-cards-full + .flex .size-10 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .manga-cards-full + .flex button {
+    font-size: 1.25rem !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Liens sociaux à droite */
+  .manga-cards-full + .flex .space-x-6 {
+    margin: 0 !important;
+    flex: none !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .manga-cards-full + .flex svg[width="50"] {
+    width: 35px !important;
+    height: 35px !important;
   }
 }

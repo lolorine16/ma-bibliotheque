@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheque</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'space-mono': ['Space Mono', 'monospace'],
+                        'suse-mono': ['SUSE Mono', 'monospace'],
+                        'sans': ['SUSE Mono', 'ui-sans-serif', 'system-ui'],
+                        'mono': ['Space Mono', 'ui-monospace', 'SFMono-Regular']
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f8f9fa',
+                            100: '#f1f3f4', 
+                            500: '#66666E',
+                            600: '#5a5a61',
+                            700: '#4e4e54',
+                            900: '#2c2c30'
+                        },
+                        secondary: {
+                            50: '#fafbfc',
+                            100: '#f4f5f6',
+                            500: '#9999A1',
+                            600: '#8a8a91',
+                            700: '#7b7b81',
+                            900: '#4d4d52'
+                        },
+                        accent: {
+                            50: '#fefefe',
+                            100: '#fdfdfd',
+                            200: '#E6E6E9',
+                            300: '#d9d9dc',
+                            500: '#ccccce',
+                            600: '#b8b8bb',
+                            700: '#a5a5a8',
+                            900: '#7f7f82'
+                        }
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                    }
+                },
+                keyframes: {
+                    draw: {
+                    '0%': { strokeDashoffset: '1000' },
+                    '100%': { strokeDashoffset: '0' },
+                    },
+                },
+                animation: {
+                    draw: 'draw 2s linear forwards',
+                },
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+</body>
