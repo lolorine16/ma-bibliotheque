@@ -420,12 +420,15 @@
   }
 
   .flex.justify-between .text-4xl {
-    font-size: 1rem !important;
+    font-size: 2rem !important;
   }
 
   .flex.justify-between .size-10 {
+    order: 0 !important;
+   
     width: 1rem !important;
     height: 1rem !important;
+   
   }
 
   .flex.justify-between button {
@@ -434,11 +437,13 @@
   }
 
   .flex.justify-between .space-x-6 {
-    order: 2 !important;
+    order: 1 !important;
     margin: 0 !important;
     display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
+    align-content: flex-start !important;
     gap: 0.75rem !important;
   }
 
