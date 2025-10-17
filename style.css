@@ -33,6 +33,9 @@
   font-display: swap;
 }
 
+
+
+
 @font-face {
   font-family: 'SUSE Mono';
   src: url('./assets/fonts/SUSE_Mono/SUSEMono-VariableFont_wght.ttf') format('truetype-variations');
