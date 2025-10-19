@@ -1,3 +1,5 @@
+// ========== Script ===========
+
 // Animation au chargement de la page
 document.addEventListener('DOMContentLoaded', function() {
     
